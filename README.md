@@ -19,6 +19,7 @@ Includes authentication for secure operations.
 git clone https://github.com/<YOUR-USERNAME>/MiniBlogAPI.git
 cd MiniBlogAPI
 
+
 2. Create & Activate Virtual Environment
 # Windows (cmd)
 python -m venv .venv
@@ -28,19 +29,37 @@ python -m venv .venv
 python3 -m venv .venv
 source .venv/bin/activate
 
-### 2. Install dependencies
-```bash
-pip install django djangorestframework
-```
+3. Install Dependencies
+pip install -r requirements.txt
 
-### 3. Run the development server
-```bash
+
+4. Run Development Server
 python manage.py runserver
-```
 
----
 
-## 📌 Example Requests & Responses
+API will be available at:
+👉 http://127.0.0.1:8000/api/
+
+
+
+
+🚀 API Endpoints
+🔹 Posts
+Method	Endpoint	Description	Auth Required
+GET	/api/posts/	List all posts (latest first, paginated)	❌ No
+POST	/api/posts/	Create a new post	✅ Yes
+GET	/api/posts/<id>/	Retrieve a single post + comments	❌ No
+PUT	/api/posts/<id>/	Update a post (only author)	✅ Yes
+DELETE	/api/posts/<id>/	Delete a post (only author)	✅ Yes
+🔹 Comments
+Method	Endpoint	Description	Auth Required
+POST	/api/posts/<id>/comments/	Add comment to a post	✅ Yes
+PUT	/api/comments/<id>/	Update a comment (author)	✅ Yes
+DELETE	/api/comments/<id>/	Delete a comment (author)	✅ Yes
+
+
+
+## 📌 Example Requests & Responses (Postman)
 
 ### 1. List Posts (Initially Empty)
 **Request:**
@@ -251,13 +270,7 @@ Body:
 - Clean, readable code with comments.
 
 
-
-
-
 #####         ############        ##########        ############            ############
-
-
-
 
 
 
@@ -287,7 +300,7 @@ REST_FRAMEWORK = {
 
 
 
-## Create a superuser (to log in and get tokens)
+## Create a superuser (to log in and get tokens) (Optional)
 ```
 python manage.py createsuperuser
 ```
