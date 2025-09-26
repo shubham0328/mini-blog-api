@@ -1,23 +1,32 @@
 # Mini Blog API (Tier 1 — In-Memory)
 
-## 📌 Setup Instructions
 
-### 1. Create & activate virtual environment
-- **Windows (PowerShell):**
-```powershell
+📝 Project Overview
+
+Mini Blog API is a Django REST Framework (DRF) project that allows users to:
+
+Create, update, delete, and fetch blog posts.
+
+Add comments to posts, and manage (update/delete) their comments.
+
+Supports pagination and returns posts in reverse chronological order (latest first).
+
+Includes authentication for secure operations.
+
+
+⚙️ Setup Instructions
+1. Clone Repository
+git clone https://github.com/<YOUR-USERNAME>/MiniBlogAPI.git
+cd MiniBlogAPI
+
+2. Create & Activate Virtual Environment
+# Windows (cmd)
 python -m venv .venv
-.\.venv\Scripts\activate
-```
-or
-```powershell
 .venv\Scripts\activate
-```
 
-- **Linux/macOS:**
-```bash
+# Mac/Linux
 python3 -m venv .venv
 source .venv/bin/activate
-```
 
 ### 2. Install dependencies
 ```bash
