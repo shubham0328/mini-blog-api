@@ -1,0 +1,20 @@
+# Django & DRF
+Django==5.0.6
+djangorestframework==3.15.1
+
+# JWT Authentication
+djangorestframework-simplejwt==5.3.1
+
+# Database (SQLite by default, psycopg2 only if using PostgreSQL)
+psycopg2-binary==2.9.9
+
+# CORS (if you allow API access from frontend apps)
+django-cors-headers==4.3.1
+
+# Environment Variables (optional but recommended)
+python-decouple==3.8
+
+# Utilities
+pytz==2024.1
+sqlparse==0.5.1
+asgiref==3.8.1
